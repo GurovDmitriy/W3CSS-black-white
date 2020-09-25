@@ -1,0 +1,31 @@
+.usr-main-photo {
+  display: none;
+
+  @media (min-width: @laptopWidth) {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    min-height: 500px;
+    height: 100vh;
+    width: 40%;
+  }
+}
+
+.no-webp .usr-main-photo {
+  background-image: url('../../image/min/profile_girl.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--colorBlack);
+}
+
+.webp .usr-main-photo {
+  background-image: url('../../image/min/profile_girl.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--colorBlack);
+}

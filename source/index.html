@@ -14,8 +14,8 @@
   <meta name="googlebot"                content="">
   <meta name="google-site-verification" content="">
 
-  <link rel="preload" href="fonts/woff2/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/woff2/Montserrat-Bold.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/woff2/Montserrat-Regular.woff2"  as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/woff2/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="preload" href="https://www.w3schools.com/w3css/4/w3.css"         as="style">
   <link rel="preload" href="css/style.css"                                    as="style">
@@ -42,35 +42,42 @@
 
 <body>
 
-  <header>
+  <header class="w3-padding-32 usr-header">
+
+    <div class="w3-content w3-container w3-center">
+      <h1 class="w3-jumbo w3-text-black">Jane Doe</h1>
+      <p>Photgrapher and Web Designer.</p>
+    </div>
 
     <div class="usr-main-photo"></div>
 
-    <h1>Jane Doe</h1>
-    <p>Photgrapher and Web Designer.</p>
-    <button type="button">Download resume</button>
+    <div class="w3-content w3-container w3-center">
+      <button class="w3-button w3-padding-large w3-light-grey" type="button"><span class="fa fa-download w3-margin-right"></span> Download resume</button>
+    </div>
 
     <a class="skip-link" href="#main">skip to main</a>
 
     <button class="usr-burger" type="button"><span class="visually-hidden">Menu</span></button>
 
-    <nav>
+    <nav class="w3-sidebar w3-display-container w3-black w3-animate-right w3-text-grey usr-menu usr--hidden">
       <h2 class="visually-hidden">Navigation</h2>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="w3-bar-block w3-display-middle w3-center w3-xxlarge">
+        <li><a class="w3-bar-item" href="#home">Home</a></li>
+        <li><a class="w3-bar-item" href="#portfolio">Portfolio</a></li>
+        <li><a class="w3-bar-item" href="#about">About</a></li>
+        <li><a class="w3-bar-item" href="#contact">Contact</a></li>
       </ul>
     </nav>
 
   </header>
 
-  <main id="main">
+  <main class="usr-main" id="main">
 
     <section>
-      <h2>My portfolio</h2>
-      <hr>
+      <div class="w3-content w3-container">
+        <h2>My portfolio</h2>
+        <hr>
+      </div>
 
       <div class="w3-row-padding">
 
@@ -140,7 +147,7 @@
 
     </section>
 
-    <section>
+    <section class="w3-content w3-container">
       <h2>About</h2>
       <hr>
 
@@ -148,7 +155,7 @@
 
     </section>
 
-    <section>
+    <section class="w3-content w3-container">
       <h2>My skills</h2>
 
       <label class="w3-wide" for="photography"><span class="fa fa-camera"></span> Photography</label>
@@ -171,10 +178,10 @@
 
     </section>
 
-    <section>
+    <section class="w3-content w3-container">
       <h2 class="visually-hidden">Achievements</h2>
 
-      <ul class="w3-container w3-row">
+      <ul class="w3-container w3-row w3-dark-grey">
         <li class="w3-col m3 w3-center">
           <p><span class="w3-block w3-xlarge">14+</span> Partners</p>
         </li>
@@ -193,9 +200,11 @@
 
     </section>
 
-    <section>
-      <h2>My reputation</h2>
-      <hr>
+    <section class="w3-content">
+      <div class="w3-container">
+        <h2>My reputation</h2>
+        <hr>
+      </div>
 
       <blockquote class="w3-container">
         <picture>
@@ -230,9 +239,11 @@
 
     </section>
 
-    <section>
-      <h2>My price</h2>
-      <hr>
+    <section class="w3-content">
+      <div class="w3-container">
+        <h2>My price</h2>
+        <hr>
+      </div>
 
       <div class="w3-row-padding usr-price">
         <div class="w3-col l6 w3-margin-bottom w3-center">
@@ -269,7 +280,7 @@
 
     </section>
 
-    <section>
+    <section class="w3-content w3-container">
       <h2>Contact Me</h2>
       <hr>
 
@@ -312,7 +323,7 @@
 
   </main>
 
-  <footer>
+  <footer class="usr-footer">
 
     <section>
 

@@ -312,8 +312,8 @@ template {
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('../fonts/woff2/Montserrat-Bold.woff2') format('woff2');
-  font-weight: 700;
+  src: url('../fonts/woff2/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -322,6 +322,8 @@ template {
   /* переменные цвета */
   --colorWhite: #ffffff;
   --colorBlack: #000000;
+  --colorGrey: #757575;
+  --colorDarkGrey: #616161;
 }
 /* переменные less */
 /* переменные вьюпорта */
@@ -351,6 +353,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: var(--colorGrey);
 }
 /* только для скринридера */
 .visually-hidden {
@@ -402,6 +405,11 @@ h3,
 h4 {
   font-family: 'Montserrat', sans-serif;
 }
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -415,23 +423,37 @@ img {
   width: 100%;
   height: auto;
 }
+blockquote {
+  margin: 0;
+  padding: 0;
+}
 blockquote img {
   width: 80px;
 }
 address {
   font-style: normal;
 }
+/*base class*/
+.usr--hidden {
+  display: none;
+}
+.usr-header,
+.usr-main,
+.usr-footer {
+  width: 60%;
+  margin-left: auto;
+}
 .usr-burger {
-  position: absolute;
+  position: fixed;
   top: 16px;
   right: 16px;
   z-index: 10;
   display: block;
-  width: 40px;
-  height: 20px;
+  width: 60px;
+  height: 30px;
   padding: 0;
   border: none;
-  box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  box-shadow: inset 0 -3px 0 0 var(--colorGrey);
   background-color: transparent;
 }
 .usr-burger::before,
@@ -439,8 +461,8 @@ address {
   position: absolute;
   content: '';
   display: block;
-  height: 2px;
-  background-color: var(--colorBlack);
+  height: 3px;
+  background-color: var(--colorGrey);
 }
 .usr-burger::before {
   top: 0;
@@ -452,11 +474,6 @@ address {
   right: 0;
   width: 100%;
   transform: translate(0, -50%);
-}
-@media (min-width: 962px) {
-  .usr-burger {
-    display: none;
-  }
 }
 .usr-burger--open {
   animation-name: burgerOpen;
@@ -502,10 +519,10 @@ address {
 }
 @keyframes burgerOpen {
   0% {
-    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+    box-shadow: inset 0 -3px 0 0 var(--colorGrey);
   }
   100% {
-    box-shadow: inset 0 -2px 0 0 transparent;
+    box-shadow: inset 0 -3px 0 0 transparent;
   }
 }
 @keyframes burgerAfterOpen {
@@ -568,10 +585,10 @@ address {
 }
 @keyframes burgerClose {
   0% {
-    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+    box-shadow: inset 0 -3px 0 0 var(--colorGrey);
   }
   100% {
-    box-shadow: inset 0 -2px 0 0 transparent;
+    box-shadow: inset 0 -3px 0 0 transparent;
   }
 }
 @keyframes burgerAfterClose {
@@ -631,4 +648,40 @@ address {
     top: 50%;
     transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
   }
+}
+.usr-main-photo {
+  display: none;
+}
+@media (min-width: 993px) {
+  .usr-main-photo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    min-height: 500px;
+    height: 100vh;
+    width: 40%;
+  }
+}
+.no-webp .usr-main-photo {
+  background-image: url('../image/min/profile_girl.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--colorBlack);
+}
+.webp .usr-main-photo {
+  background-image: url('../image/min/profile_girl.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--colorBlack);
+}
+.usr-menu {
+  top: 0;
+  right: 0;
+  width: 60%;
+}
+.usr-menu a {
+  text-decoration: none;
 }

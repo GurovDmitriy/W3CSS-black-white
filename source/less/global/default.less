@@ -21,6 +21,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: var(--colorGrey);
 }
 
 /* только для скринридера */
@@ -93,6 +94,13 @@ h4 {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 600;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -109,6 +117,11 @@ img {
   height: auto;
 }
 
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
 blockquote img {
   width: 80px;
 }
@@ -117,3 +130,15 @@ address {
   font-style: normal;
 }
 
+/*base class*/
+
+.usr--hidden {
+  display: none;
+}
+
+.usr-header,
+.usr-main,
+.usr-footer {
+  width: 60%;
+  margin-left: auto;
+}
