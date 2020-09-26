@@ -755,12 +755,12 @@ button,
 }
 @media (min-width: 601px) {
   .usr-gallery .w3-image--show {
-    width: 80vh;
+    width: 80vw;
   }
 }
 @media (min-width: 1100px) {
   .usr-gallery .w3-image--show {
-    width: 70vh;
+    width: 70vw;
   }
 }
 .usr-gallery__overlay {
