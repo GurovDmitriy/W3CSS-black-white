@@ -55,11 +55,11 @@ button:focus:not(:focus-visible) {
 }
 
 .js-focus-visible .focus-visible {
-  .focusCustom(var(--colorBlack));
+  .focusCustom(var(--colorDarkGrey));
 }
 
-.js-focus-visible footer .focus-visible {
-  .focusCustom(var(--colorWhite));
+.js-focus-visible .usr-price h3.focus-visible {
+  .focusCustom(var(--colorLightGrey));
 }
 
 .js-focus-visible button.focus-visible {
@@ -130,6 +130,10 @@ address {
   font-style: normal;
 }
 
+main a {
+  text-decoration: none;
+}
+
 /*base class*/
 
 .usr--hidden {
@@ -139,6 +143,32 @@ address {
 .usr-header,
 .usr-main,
 .usr-footer {
-  width: 60%;
-  margin-left: auto;
+  @media (min-width: @laptopWidth) {
+    width: 60%;
+    margin-left: auto;
+  }
+}
+
+.w3-grayscale {
+  filter: grayscale(100%);
+}
+
+.usr-header {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 600px;
+  height: 100vh;
+
+  padding-top: 64px;
+
+  @media (min-width: @laptopWidth) {
+    display: block;
+    flex-direction: column;
+
+    min-height: auto;
+    height: auto;
+
+    padding-bottom: 64px;
+  }
 }

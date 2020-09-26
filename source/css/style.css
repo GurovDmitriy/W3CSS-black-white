@@ -323,6 +323,7 @@ template {
   --colorWhite: #ffffff;
   --colorBlack: #000000;
   --colorGrey: #757575;
+  --colorLightGrey: #f1f1f1;
   --colorDarkGrey: #616161;
 }
 /* переменные less */
@@ -377,10 +378,10 @@ button:focus:not(:focus-visible) {
   outline: none;
 }
 .js-focus-visible .focus-visible {
-  outline: 2px solid var(--colorBlack);
+  outline: 2px solid var(--colorDarkGrey);
 }
-.js-focus-visible footer .focus-visible {
-  outline: 2px solid var(--colorWhite);
+.js-focus-visible .usr-price h3.focus-visible {
+  outline: 2px solid var(--colorLightGrey);
 }
 .js-focus-visible button.focus-visible {
   outline-offset: 2px;
@@ -433,15 +434,39 @@ blockquote img {
 address {
   font-style: normal;
 }
+main a {
+  text-decoration: none;
+}
 /*base class*/
 .usr--hidden {
   display: none;
 }
-.usr-header,
-.usr-main,
-.usr-footer {
-  width: 60%;
-  margin-left: auto;
+@media (min-width: 993px) {
+  .usr-header,
+  .usr-main,
+  .usr-footer {
+    width: 60%;
+    margin-left: auto;
+  }
+}
+.w3-grayscale {
+  filter: grayscale(100%);
+}
+.usr-header {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  height: 100vh;
+  padding-top: 64px;
+}
+@media (min-width: 993px) {
+  .usr-header {
+    display: block;
+    flex-direction: column;
+    min-height: auto;
+    height: auto;
+    padding-bottom: 64px;
+  }
 }
 .usr-burger {
   position: fixed;
@@ -453,7 +478,7 @@ address {
   height: 30px;
   padding: 0;
   border: none;
-  box-shadow: inset 0 -3px 0 0 var(--colorGrey);
+  box-shadow: inset 0 -4px 0 0 var(--colorGrey);
   background-color: transparent;
 }
 .usr-burger::before,
@@ -461,7 +486,7 @@ address {
   position: absolute;
   content: '';
   display: block;
-  height: 3px;
+  height: 4px;
   background-color: var(--colorGrey);
 }
 .usr-burger::before {
@@ -519,10 +544,10 @@ address {
 }
 @keyframes burgerOpen {
   0% {
-    box-shadow: inset 0 -3px 0 0 var(--colorGrey);
+    box-shadow: inset 0 -4px 0 0 var(--colorGrey);
   }
   100% {
-    box-shadow: inset 0 -3px 0 0 transparent;
+    box-shadow: inset 0 -4px 0 0 transparent;
   }
 }
 @keyframes burgerAfterOpen {
@@ -585,10 +610,10 @@ address {
 }
 @keyframes burgerClose {
   0% {
-    box-shadow: inset 0 -3px 0 0 var(--colorGrey);
+    box-shadow: inset 0 -4px 0 0 var(--colorGrey);
   }
   100% {
-    box-shadow: inset 0 -3px 0 0 transparent;
+    box-shadow: inset 0 -4px 0 0 transparent;
   }
 }
 @keyframes burgerAfterClose {
@@ -650,7 +675,8 @@ address {
   }
 }
 .usr-main-photo {
-  display: none;
+  flex-grow: 1;
+  width: 100%;
 }
 @media (min-width: 993px) {
   .usr-main-photo {
@@ -684,4 +710,13 @@ address {
 }
 .usr-menu a {
   text-decoration: none;
+}
+.usr-progress__item:nth-of-type(1) div {
+  width: 90%;
+}
+.usr-progress__item:nth-of-type(2) div {
+  width: 80%;
+}
+.usr-progress__item:nth-of-type(3) div {
+  width: 70%;
 }
