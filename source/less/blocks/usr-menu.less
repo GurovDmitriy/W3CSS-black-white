@@ -2,9 +2,18 @@
   top: 0;
   right: 0;
 
-  width: 60%;
+  width: 100%;
+
+  @media (min-width: @laptopWidth) {
+    width: 60%;
+  }
 }
 
 .usr-menu a {
   text-decoration: none;
 }
+
+.usr-menu--hidden {
+  display: none;
+}
+

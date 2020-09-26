@@ -1,7 +1,7 @@
 'use strict';
 // button toggle menu
 const burger = document.querySelector('.usr-burger');
-const menu = document.querySelector('.usr-nav__menu');
+const menu = document.querySelector('.usr-menu');
 
 burger.onclick = function () {
   if (burger.classList.contains('usr-burger--open')) {
@@ -10,12 +10,21 @@ burger.onclick = function () {
     burger.classList.add('usr-burger--open');
   }
 
-  menu.classList.toggle('usr-nav__menu--hidden');
+  menu.classList.toggle('usr-menu--hidden');
 };
+
+window.onscroll = function () { scrollFunction(); };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    burger.classList.add('usr-burger--close');
+    menu.classList.add('usr-menu--hidden');
+  }
+}
 
 // Modal Image Gallery
 const gallery = document.querySelector('.usr-gallery');
-const images = document.querySelectorAll('.w3-image');
+const images = document.querySelectorAll('.usr-gallery .w3-image');
 const overlay = document.querySelector('.w3-overlay');
 
 for (let i = 0; i < images.length; i++) {
@@ -45,29 +54,16 @@ for (let i = 0; i < images.length; i++) {
   };
 }
 
-// Change style of navbar on scroll
-window.onscroll = function () { myFunction(); };
-function myFunction() {
-  const navbar = document.querySelector('.usr-nav');
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    navbar.className = 'w3-top' + ' w3-card' + ' w3-white' + ' usr-nav';
-    menu.classList.add('w3-animate-top');
-  } else {
-    navbar.className = navbar.className.replace('w3-top w3-card w3-white usr-nav', 'w3-top usr-nav');
-    menu.classList.remove('w3-animate-top');
-  }
-}
-
 // scrollspy
 
-const sections = document.querySelectorAll('div[id]');
-const menu_links = document.querySelectorAll('.usr-nav__menu a');
+const sections = document.querySelectorAll('.usr-section');
+const menu_links = document.querySelectorAll('.usr-menu a');
 
-const makeActive = (link) => menu_links[link].classList.add('w3-light-grey');
-const removeActive = (link) => menu_links[link].classList.remove('w3-light-grey');
+const makeActive = (link) => menu_links[link].classList.add('w3-text-white');
+const removeActive = (link) => menu_links[link].classList.remove('w3-text-white');
 const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
-const sectionMargin = 100;
+const sectionMargin = 200;
 
 let currentActive = 0;
 
